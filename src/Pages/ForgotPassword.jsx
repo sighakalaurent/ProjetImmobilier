@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import OAuth from '../components/OAuth';
+import { CiUser } from "react-icons/ci";
 
 
 export default function ForgotPassword() {
+
   const [email, setEmail] = useState("");
-  const { } = formData;
   function onChange(e) {
     setEmail((e.target.value)({
     }))
@@ -34,7 +35,7 @@ export default function ForgotPassword() {
             < CiUser className='absolute right-3 top-4 text-xl bg-red' />
           </div>
           <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg flex-1'>
-            <p className='mb-6'>? <Link to="sign-up" className=' text-emerald-500 hover:text-emerald-800 cursor-pointer transition duration-200 ease-in-out ml-1'>Don't have a account?</Link> </p>
+            <p className='mb-6'>Don't have a account ? <Link to="/sign-up" className=' text-emerald-500 hover:text-emerald-800 cursor-pointer transition duration-200 ease-in-out ml-1'>Register</Link> </p>
             <p>
               <Link to="/sign-in" className='text-blue-300 hover:text-blue-700 transition duration-200  ease-in-out ml-1'>Sign in instead</Link>
             </p>
