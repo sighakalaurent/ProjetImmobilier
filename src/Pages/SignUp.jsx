@@ -16,7 +16,7 @@ export default function SignUp() {
     name: "",
     email: "",
     password: ""
-  });
+  })
   const { name, email, password } = formData;
   const navigate = useNavigate()
   function onChange(e) {
@@ -36,8 +36,8 @@ export default function SignUp() {
       delete formDataCopy.password
       formDataCopy.timestamp = serverTimestamp();
       await setDoc(doc(db, "users", user.uid), formDataCopy)
-     // toast.success("sign up was successful ")
-      //navigate("/")
+      toast.success("sign up was successful ")
+      navigate("/")
     } catch (error) {
 toast.error("Something went wrong with the registration.")    }
   }
