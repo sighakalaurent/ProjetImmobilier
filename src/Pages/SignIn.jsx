@@ -56,9 +56,9 @@ export default function SignIn() {
             ) : <AiFillEye className='absolute right-3 top-4 text-xl cursor-pointer' onClick={() => setShowPassword((prevState) => !prevState)} />}
           </div>
           <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg flex-1'>
-            <p className='mb-6'>Vous n'avez pas de compte ? <Link to="/sign-up" className=' text-emerald-500 hover:text-emerald-800 cursor-pointer transition duration-200 ease-in-out ml-1'>Écrivez-nous ici</Link> </p>
+            <p className='mb-6'>Don't have a account ? <Link to="/sign-up" className=' text-emerald-500 hover:text-emerald-800 cursor-pointer transition duration-200 ease-in-out ml-1'>Register</Link> </p>
             <p>
-              <Link to="/forgot-password" className='text-blue-300 hover:text-blue-700 transition duration-200  ease-in-out ml-1'>Mot de passe oublié?</Link>
+              <Link to="/forgot-password" className='text-blue-300 hover:text-blue-700 transition duration-200  ease-in-out ml-1'>Forgot password?</Link>
             </p>
           </div>
           <button className='w-full bg-emerald-700 text-emerald-500  px-7 py-3 text-sum font-medium uppercase rounded shadow-md hover:bg-white transition duration-150 ease-in-out hover:shadow-lg active:bg-emerald-800' type="submit">connexion</button>
