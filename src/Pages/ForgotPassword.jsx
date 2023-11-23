@@ -2,12 +2,26 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import OAuth from '../components/OAuth';
 import { CiUser } from 'react-icons/ci';
+import { toast } from 'react-toastify';
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   function onChange(e) {
     setEmail(e.target.value)
+  }
+  async function onSubmit(e){
+    e.preventDefault()
+    try {
+      
+      const auth= getAuth()
+      await sendPasswordResetEmail(auth,email)
+      toast.success("Email was sent")
+    } catch (error) {
+      toast.error("Could not send reset password")
+    }
+
   }
   return <section>
     <h1 className="text-3xl text-center mt-6 font-bold">Forgot Password</h1>
@@ -20,7 +34,7 @@ export default function ForgotPassword() {
         />
       </div>
       <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20">
-        <form>
+        <form onSubmit={onSubmit}>
           <div className='relative'>
             <input
               type="email"
@@ -38,7 +52,7 @@ export default function ForgotPassword() {
               <Link to="/sign-in" className='text-blue-300 hover:text-blue-700 transition duration-200  ease-in-out ml-1'>Sign in instead</Link>
             </p>
           </div>
-          <button className='w-full bg-emerald-700 text-emerald-500  px-7 py-3 text-sum font-medium uppercase rounded shadow-md hover:bg-white transition duration-150 ease-in-out hover:shadow-lg active:bg-emerald-800' type="submit">Send Reset Password</button>
+          <button  className='w-full bg-emerald-700 text-emerald-500  px-7 py-3 text-sum font-medium uppercase rounded shadow-md hover:bg-white transition duration-150 ease-in-out hover:shadow-lg active:bg-emerald-800' type="submit">Send Reset Password</button>
           <div className='flex items-center mx-4 before:border-t  before:flex-1  before:border-gray-300 after:border-t  after:flex-1  after:border-gray-300' ><p className='text-center font-semibold mx-4'>OU</p></div>
           <OAuth />
         </form>

@@ -3,10 +3,10 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 import { FcGoogle } from "react-icons/fc"
 import { toast } from "react-toastify";
 import { getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
-import { userNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function OAuth() {
-  const navigate = userNavigate()
+  const navigate = useNavigate()
   async function onGoogleClick() {
     try {
       const auth = getAuth()
