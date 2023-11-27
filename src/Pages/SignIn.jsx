@@ -72,7 +72,7 @@ toast.error("Bad user credential")  }
               <AiFillEyeInvisible className='absolute right-3 top-4 text-xl cursor-pointer' onClick={() => setShowPassword((prevState) => !prevState)} />
             ) : <AiFillEye className='absolute right-3 top-4 text-xl cursor-pointer' onClick={() => setShowPassword((prevState) => !prevState)} />}
           </div>
-          <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg flex-1'>
+          <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg flex-1 w-full'>
             <p className='mb-6'>Don't have a account ? <Link to="/sign-up" className=' text-emerald-500 hover:text-emerald-800 cursor-pointer transition duration-200 ease-in-out ml-1'>Register</Link> </p>
             <p>
               <Link to="/forgot-password" className='text-blue-300 hover:text-blue-700 transition duration-200  ease-in-out ml-1'>Forgot password?</Link>
