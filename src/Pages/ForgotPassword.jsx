@@ -4,7 +4,6 @@ import OAuth from '../components/OAuth';
 import { CiUser } from 'react-icons/ci';
 import { toast } from 'react-toastify';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
-import { CiUser } from "react-icons/ci";
 
 
 export default function ForgotPassword() {
